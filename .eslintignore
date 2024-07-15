@@ -1,0 +1,5 @@
+__deployment/
+/__deployment
+component/react-bootstrap/
+component/design-system/react-scroll
+public/sezzle.js

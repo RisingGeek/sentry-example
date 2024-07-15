@@ -1,0 +1,132 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "plugins": [
+    "react",
+    "eslint-plugin-import",
+    "eslint-plugin-react",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+    "import/resolver": {
+      "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"],
+          "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
+
+  "rules": {
+    "react/jsx-no-bind": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": true }],
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-var-list": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/semi": ["error"],
+    "no-empty": "off",
+    "no-useless-catch": "off",
+    "no-case-declarations": "off",
+    "no-prototype-builtins": "off",
+    "react/react-in-jsx-scope": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": ["TemplateLiteral"]
+      }
+    ],
+    "template-curly-spacing": "off",
+    "jsx-a11y/no-access-key": 0,
+    "id-length": 0,
+    "func-names": 0,
+    "no-alert": 0,
+    "no-magic-numbers": 0,
+    "no-dupe-keys": 2, // Duplicate keys in objects need to throw error.
+    "react/no-did-mount-set-state": 0,
+    "no-unused-expressions": 2, // un used expressions needs to throw errors
+    "no-else-return": 2, // If an if block contains a return statement, the else block becomes unnecessary.
+    "react/prop-types": 0,
+    "no-fallthrough": 2, // Case should always throw, return or break;
+    "guard-for-in": 2, //Looping over objects with a for in loop will include properties that are inherited through the prototype chain. This behavior can lead to unexpected items in your for loop.
+    "camelcase": 0,
+    "react/jsx-uses-vars": [2],
+    "react/jsx-uses-react": [2],
+    "comma-dangle": [2, "always-multiline"],
+    "no-unused-vars": "off",
+    "global-require": 2,
+    "max-len": 0,
+    "import/newline-after-import": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/require-extension": 0,
+    "react/no-unescaped-entities": 0,
+    "import/extensions": 0,
+    "import/imports-first": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": "off",
+    "import/no-mutable-exports": 2, //exports/imports should not be mutable
+    "quotes": [2, "double", { "avoidEscape": false }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-global-assign": 0,
+    "no-restricted-globals": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/static-property-placement": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/destructuring-assignment": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "react/sort-comp": 0,
+    "jsx-a11y/no-static-element-interactions": 0, //example onClick on span should throw error
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/no-array-index-key": 1, //keys should not be indexes for react elements in loop - warning for now needs to be changed to erro,
+    "react/require-default-props": "off",
+    "no-undef": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error"
+  }
+}
